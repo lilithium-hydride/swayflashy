@@ -7,7 +7,8 @@ use swayipc_async::{Connection, Event, EventType, Fallible, WindowChange, Window
 
 async fn flash(connection: &mut Connection, id: i64) {
 	let cmd_body: String = format!(r#"[con_id="{}"] opacity "#, id);
-	for x in (1..10) {
+	
+	for x in 1..10 {
 		connection.run_command(String::new() + &cmd_body + &(x as f32/10.0 + 0.5).to_string()).await;
 		sleep(Duration::from_millis(50)).await;
 	}
@@ -26,7 +27,7 @@ async fn main() -> Fallible<()> {
 				Event::Window(w) => {
 					if let WindowEvent { change, container, .. } = *w {
 						if change == WindowChange::Focus {
-							println!("{:#?}", container);
+							//println!("{:#?}", container);
 							flash(&mut connection, container.id).await;
 						}
 					}
