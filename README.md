@@ -7,7 +7,7 @@ or configuration files; all configuration is done by modifying the constants nea
 
 In X11, this effect is implemented at the compositor level. Wayland does not presently feature any
 way for "eye candy programs" to hook in and add effects such as blur and animated transparency, so
-`swayflashy` spams Sway with `opacity` commands over IPC in order to simulate its intentionally 
+`swayflashy` spams Sway with `opacity` commands over IPC in order to simulate intentionally 
 attention-grabbing focus animations. Despite its spammy nature, CPU usage is minimal.
 
 ### Building
