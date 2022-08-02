@@ -9,3 +9,11 @@ In X11, this effect is implemented at the compositor level. Wayland does not pre
 way for "eye candy programs" to hook in and add effects such as blur and animated transparency, so
 `swayflashy` spams Sway with `opacity` commands over IPC in order to simulate its intentionally 
 attention-grabbing focus animations. Despite its spammy nature, CPU usage is minimal.
+
+### Building
+```shell
+git clone https://github.com/lilithium-hydride/swayflashy
+cd swayflashy
+cargo build --release
+# The binary will be located at `target/release/swayflashy`
+```
