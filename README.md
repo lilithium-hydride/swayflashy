@@ -14,6 +14,6 @@ attention-grabbing focus animations. Despite its spammy nature, CPU usage is min
 ```shell
 git clone https://github.com/lilithium-hydride/swayflashy
 cd swayflashy
-cargo build --release
+cargo build --release  # Take out the `--release` to see debug messages
 # The binary will be located at `target/release/swayflashy`
 ```
