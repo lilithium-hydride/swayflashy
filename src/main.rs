@@ -7,12 +7,25 @@ use std::time::Duration;
 use swayipc_async::{Connection, Event, EventType, Fallible, WindowChange, WindowEvent};
 use tap::Tap;
 
+
+// This should probably be set to whatever your default window opacity is.
 const OPACITY_MAX: f32 = 1.0;
+
+// The minimum opacity a window will reach during its animation period. 
 const OPACITY_MIN: f32 = 0.85;
+
+// How many "frames" will it take to reach minimum opacity? 
 const RISE_STEPS: i32 = 10;
+
+// How many "frames" will it take to reach maximum opacity again?
 const FALL_STEPS: i32 = 10;
+
+// How many milliseconds will it take to reach minimum opacity?
 const RISE_DURATION_MS: i32 = 10;
+
+// How many milliseconds will it take to reach maximum opacity again?
 const FALL_DURATION_MS: i32 = 200;
+
 
 fn map_range(from_range: (f32, f32), to_range: (f32, f32), s: f32) -> f32 {
 	to_range.0 + (s - from_range.0) * (to_range.1 - to_range.0) / (from_range.1 - from_range.0)
