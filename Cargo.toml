@@ -8,4 +8,6 @@ edition = "2021"
 [dependencies]
 futures = "0.3.21"
 async-std = {version = "1.12.0", features = ["attributes"]}
+keyframe = "1.1.1"
+tap = "1.0.1"
 swayipc-async = "2.0.0"
